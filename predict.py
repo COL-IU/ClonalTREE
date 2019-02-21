@@ -384,16 +384,16 @@ def non_square_predict_fast(F, variants, predictor, fail_threshold, clones=[]):
 
 def non_square_predict(F, variants, algo, fail_threshold=FAIL_THRESHOLD, clones=[]):
     if algo == 0:
-        return non_square_predict_slow(F, variants, slow_predict, fail_threshold)
-    elif algo == 1:
-        return non_square_predict_slow(F, variants, smart_predict_original, fail_threshold)
-    elif algo == 2:
-        return non_square_predict_fast(F, variants, smart_predict_original, fail_threshold, clones)
-    elif algo == 3:
         return non_square_predict_random(F, variants)
-    elif algo == 4:
+    elif algo == 1:
+        return non_square_predict_slow(F, variants, slow_predict, fail_threshold)
+    elif algo == 2:
+        return non_square_predict_slow(F, variants, smart_predict_original, fail_threshold)
+    # elif algo == 3:
+    #     return non_square_predict_fast(F, variants, smart_predict_original, fail_threshold, clones)
+    elif algo == 3:
         return non_square_predict_smart(F, variants, smart_predict_original, fail_threshold, clones)
-    elif algo == 5:
+    elif algo == 4:
         return non_square_predict_smart(F, variants, smart_predict_penalty, fail_threshold, clones)
     else:
         exit("Invalid parameter for algo.")

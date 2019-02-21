@@ -2,7 +2,12 @@ from predict import *
 import sys
 
 if len(sys.argv) <= 4:
-    sys.exit("Usage: python3 ClonalTree.py <F matrix> <algo> <fail_threshold> <out_prefix> <optional: clones>")
+    sys.exit("Usage: python3 ClonalTREE.py <VAF file> <algorithm> <fail threshold> <out prefix> <clones (optional)>\n\n"
+             "VAF file:\t[String] Input file containing the variant allele frequencies matrix (F).\n"
+             "algorithm:\t[Int] 0 (RP-RT); 1 (EP-ET); 2 (EP-GT); 3 (GP-GT).\n"
+             "fail threshold:\t[Float] Minimum value allowed in the C matrix to define failure.\n"
+             "out prefix:\t[String] File path to prefix all output files.\n"
+             "clones:\t\t[String] A file containing the composition of known clones. (Optional argument)\n")
 
 algo = int(sys.argv[2])
 fail_threshold = Decimal(sys.argv[3])
