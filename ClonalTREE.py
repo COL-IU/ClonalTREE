@@ -28,6 +28,10 @@ if len(sys.argv) == 6:
 
 var1, parents1, p1, c1 = non_square_predict(F_in, var_in, algo, fail_threshold, clones=clones)
 
+if len(parents1) == 0:
+    print("\nUnable to find a valid solution under the given parameters. Please try lowering the fail threshold.\n")
+    sys.exit()
+
 o1 = open(out_prefix + ".tree", "w")
 print_parents(var1, parents1, o1)
 o1.close()
@@ -47,3 +51,4 @@ o2.write(" ".join(var1) + "\n")
 write_dm(c_norm, o2)
 o2.close()
 
+print("\nSolution output to files: \n" + out_prefix + ".tree\n" + out_prefix + ".C\n")

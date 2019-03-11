@@ -168,6 +168,8 @@ def write_im(mat, out):
 
 def write_dm(mat, out):
     m = len(mat)
+    if m == 0:
+        return
     n = len(mat[0])
     for i in range(0, m):
         for j in range(0, n):
