@@ -9,7 +9,7 @@ out prefix:     [String] File path to prefix all output files.
 clones:         [String] A file containing the composition of known clones. (Optional argument)  
   
 Example VAF File contents:  
-0 1 2 3 4 5 6 7 8 9  
+1 2 3 4 5 6 7 8 9  
 0.94968 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000  
 0.70349 0.31292 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000  
 0.38256 0.08753 0.38538 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000  
